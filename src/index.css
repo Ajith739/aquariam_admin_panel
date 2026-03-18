@@ -1,0 +1,28 @@
+/* ============================================================
+   FIXED: The original index.css was the Vite starter template
+   which conflicted with App.css (wrong #root sizing, wrong
+   CSS variables, dark-mode overrides). Replaced with minimal
+   reset that defers everything to App.css.
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Critical fix: Vite default had width:1126px + text-align:center
+   which crushed the sidebar layout into a narrow centred column */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border: none;
+  min-height: 100vh;
+  display: block;
+}
